@@ -1,6 +1,7 @@
 
 # global
 # --------------------------------------------------------------------
+export TERM="xterm-256color"
 export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export ANDROID_HOME=${HOME}/Library/Android/sdk
@@ -16,6 +17,15 @@ source ./.zsh/.zsh_functions
 source ./.zsh/.zsh_variables
 source ./.zsh/.zsh_prompt
 
+# tns-completion-start
+if [ -f /Users/avmax/.tnsrc ]; then
+    source /Users/avmax/.tnsrc
+fi
+
+# tmux
+if [ "$TMUX" = "" ]; then
+    tmux;
+fi
 
 
 # settings
@@ -177,8 +187,3 @@ bindkey '^D'      delete-char             # Del
 bindkey '^E'      end-of-line             # End
 bindkey '^R'      history-incremental-pattern-search-backward
 
-###-tns-completion-start-###
-if [ -f /Users/avmax/.tnsrc ]; then 
-    source /Users/avmax/.tnsrc 
-fi
-###-tns-completion-end-###
