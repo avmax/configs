@@ -3,15 +3,20 @@
 
 "                           ----- variables -----
 
-let g:name = "Richard Guay" "Set my name in to the name variable
+let g:name = "Andrey Ponomarenko" "Set my name in to the name variable
 
 
 
 "                               ----- abbreviations -----
 
 iabbrev @@ avmax.web@gmail.com
-cabbrev help tab help
 
-cabbrev landings :tabnew ~/sandbox/web/projects/landings/
-cabbrev sandbox :tabnew ~/sandbox
-cabbrev sql :tabnew ~/sandbox/db/sql/mipt
+cabbrev projects e ~/sandbox/web/projects/
+cabbrev landings e ~/sandbox/web/projects/landings/
+cabbrev sandbox e ~/sandbox/
+
+cabbrev svrc source ~/.vimrc
+cabbrev evrc e ~/.vim/
+
+cabbrev ezrc e ~/.zsh
+

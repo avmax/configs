@@ -53,9 +53,9 @@
 
 " Javascript
         augroup filetype_js
-             autocmd FileType javascript setlocal omnifunc=tern#Complete
              autocmd!
              autocmd BufRead,BufNewFile *.js set filetype=javascript
+             " autocmd FileType javascript setlocal omnifunc=tern#Complete
         augroup END
 
 
@@ -63,8 +63,8 @@
         augroup filetype_ts
              autocmd!
              autocmd BufRead,BufNewFile .ts set filetype=typescript
-             autocmd FileType javascript setlocal omnifunc=tsuquyomi#complete
-             autocmd FileType typescript setlocal completeopt+=menu,preview
+             " autocmd FileType typescript setlocal omnifunc=tsuquyomi#complete
+             " autocmd FileType typescript setlocal completeopt+=menu,preview
         augroup END
 
 

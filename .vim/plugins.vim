@@ -16,12 +16,16 @@
         Plugin 'scrooloose/nerdtree'
         Plugin 'scrooloose/nerdcommenter'
         Plugin 'Xuyuanp/nerdtree-git-plugin'
-        Plugin 'vim-airline/vim-airline'
-        Plugin 'vim-airline/vim-airline-themes'
         Plugin 'mileszs/ack.vim'
         Plugin 'tpope/vim-surround'
         Plugin 'NLKNguyen/copy-cut-paste.vim'
         Plugin 'Raimondi/delimitMate'
+        Plugin 'bling/vim-bufferline'
+        Plugin 'jlanzarotta/bufexplorer'
+        Plugin 'schickling/vim-bufonly'
+        Plugin 'vim-airline/vim-airline'
+        Plugin 'vim-airline/vim-airline-themes'
+        Plugin 'editorconfig/editorconfig-vim'
 
 " git
         Plugin 'airblade/vim-gitgutter'
@@ -42,17 +46,15 @@
         Plugin 'scrooloose/syntastic'
         Plugin 'ternjs/tern_for_vim'
         Plugin 'valloric/youcompleteme'
+        " [ID] = the extra_menu_info parameter at line 66 in the YouCompleteMe/third_party/ycmd/ycmd/completers/all/identifier_completer.py file.
         Plugin 'mattn/emmet-vim'
-        Plugin 'quramy/tsuquyomi'
         Plugin 'leafgarland/typescript-vim'
         Plugin 'othree/csscomplete.vim'
-        " [ID] = the extra_menu_info parameter at line 66 in the YouCompleteMe/third_party/ycmd/ycmd/completers/all/identifier_completer.py file.
 
 
 "  colorshemes
         Plugin 'flazz/vim-colorschemes'
-        Plugin 'acarapetis/vim-colors-github'
-        Plugin 'mhartington/oceanic-next'
+        Plugin 'ColorSchemeMenuMaker'
 
     " required
     call vundle#end()
@@ -103,63 +105,34 @@
     let g:NERDTrimTrailingWhitespace = 1
 
 
-" NERDTree git plugin
-    let g:NERDTreeIndicatorMapCustom = {
-        \ "Modified"  : "✹",
-        \ "Staged"    : "✚",
-        \ "Untracked" : "✭",
-        \ "Renamed"   : "➜",
-        \ "Unmerged"  : "═",
-        \ "Deleted"   : "✖",
-        \ "Dirty"     : "✗",
-        \ "Clean"     : "✔︎",
-        \ 'Ignored'   : '☒',
-        \ "Unknown"   : "?"
-        \ }
-
-
 " airline
-    " unicode symbols
-    let g:airline_left_sep = '»'
-    let g:airline_left_sep = '▶'
-    let g:airline_right_sep = '«'
-    let g:airline_right_sep = '◀'
-
-    " powerline symbols
-    let g:airline_left_sep = ''
-    let g:airline_left_alt_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_right_alt_sep = ''
-
     let g:airline_powerline_fonts = 1
-
-    let g:airline_theme='monochrome'
+    " enable tabline
     let g:airline#extensions#tabline#enabled = 1
-    let g:airline#extensions#tabline#left_sep = ' '
-    let g:airline_left_sep = ''
-    let g:airline_left_alt_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_right_alt_sep = ''
 
-    " disable word counting.
-    let g:airline#extensions#wordcount#enabled = 0
-    " enable enhanced tabline
-    let g:airline#extensions#tabline#enabled = 1
-    " enable/disable displaying open splits per tab (only when tabs are opened)
-    let g:airline#extensions#tabline#show_splits = 1
-    " enable/disable displaying buffers with a single tab
-    let g:airline#extensions#tabline#show_buffers = 1
-    " configure how numbers are displayed in tab mode. >
-    let g:airline#extensions#tabline#tab_nr_type = 0 " # of splits (default)
-    let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
-    let g:airline#extensions#tabline#tab_nr_type = 2 " splits and tab number
+    let g:airline#extensions#tabline#fnamemod = ':t'
+
     " enable/disable YCM integration >
     let g:airline#extensions#ycm#enabled = 1
+
     " set error count prefix >
     let g:airline#extensions#ycm#error_symbol = 'E:'
+
     " set warning count prefix >
     let g:airline#extensions#ycm#warning_symbol = 'W:'
 
+    " disable git hooks
+    let g:airline#extensions#hunks#enabled = 0
+
+    let g:airline_section_c = '%{getcwd()}'
+
+
+" bufferline
+    " let g:bufferline_echo = 1
+    " let g:bufferline_active_buffer_left = '['
+    " let g:bufferline_active_buffer_right = ']'
+    " let g:bufferline_modified = '+'
+    " let g:bufferline_show_bufnr = 1
 
 " syntastic
     set statusline+=%#warningmsg#
@@ -174,9 +147,6 @@
     let g:syntastic_mode_map = {
         \ "mode": "active",
         \ "passive_filetypes": ["html"] }
-
-    let g:tsuquyomi_disable_quickfix = 1
-    let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
 
 
 " emmet

@@ -10,8 +10,6 @@ let mapleader="\\"
 
 
 " global
-    nnoremap <leader>P :tabnew ~/.vim<cr>
-    nnoremap <leader>p :source ~/.vimrc<cr>
 
 
 " navigation in file
@@ -20,7 +18,7 @@ let mapleader="\\"
 
 "  windows
     " vertical split
-    nnoremap <silent> <leader>n :vnew <cr><Esc>
+    nnoremap <silent> <leader>v :vnew <cr><Esc>
 
     " navigate
     map <leader>a <C-w>h<C-w>_
@@ -53,7 +51,7 @@ let mapleader="\\"
     " prev buffer
     nnoremap <silent> <leader>e :bnext<cr><Esc>
     " close buffer
-    nnoremap <silent> <leader>k :bd<cr><Esc>
+    nnoremap <silent> <leader>k :bd!<cr><Esc>
 
 
 
@@ -61,9 +59,9 @@ let mapleader="\\"
     " new tab
     nnoremap <silent> <leader>N :tabnew<Esc>
     " prev tab
-    nnoremap <silent> <leader>Q :tabp<cr><Esc>
+    nnoremap <silent> <leader>A :tabp<cr><Esc>
     " next tab
-    nnoremap <silent> <leader>E :tabn<cr><Esc>
+    nnoremap <silent> <leader>D :tabn<cr><Esc>
 
 
 
@@ -194,3 +192,8 @@ let mapleader="\\"
 
 " search
 
+
+
+" programming
+    " emmet
+    map <silent> <leader>> <C-z>,
