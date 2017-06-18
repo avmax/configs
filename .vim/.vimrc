@@ -213,6 +213,7 @@
 
     "choose colorcseme
     set background=dark
+    let g:solarized_termcolors = 256
     colorscheme solarized
     let g:enable_bold_font = 1
 

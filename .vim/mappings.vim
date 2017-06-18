@@ -1,7 +1,7 @@
 
 " mappings
 
-let mapleader="\\"
+    let mapleader="\\"
 
 
 
@@ -10,6 +10,7 @@ let mapleader="\\"
 
 
 " global
+    nnoremap <leader>r :source ~/.vimrc <cr>
 
 
 " navigation in file

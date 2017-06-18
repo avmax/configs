@@ -26,6 +26,7 @@
         Plugin 'vim-airline/vim-airline'
         Plugin 'vim-airline/vim-airline-themes'
         Plugin 'editorconfig/editorconfig-vim'
+        Plugin 'edkolev/tmuxline.vim'
 
 " git
         Plugin 'airblade/vim-gitgutter'
@@ -53,6 +54,7 @@
 
 
 "  colorshemes
+        Plugin 'altercation/vim-colors-solarized'
         Plugin 'flazz/vim-colorschemes'
         Plugin 'ColorSchemeMenuMaker'
 
@@ -110,6 +112,9 @@
     " enable tabline
     let g:airline#extensions#tabline#enabled = 1
 
+    " disable tmuxline
+    let g:airline#extensions#tmuxline#enabled = 1
+
     let g:airline#extensions#tabline#fnamemod = ':t'
 
     " enable/disable YCM integration >
@@ -126,6 +131,40 @@
 
     let g:airline_section_c = '%{getcwd()}'
 
+    let g:airline_theme='hybrid'
+
+
+" tmuxline
+    let g:tmuxline_separators = {
+        \ 'left' : '*',
+        \ 'left_alt': '->',
+        \ 'right' : '!',
+        \ 'right_alt' : '>',
+        \ 'space' : '|'}
+
+    let g:tmuxline_theme = 'airline_visual'
+
+    let g:tmuxline_preset = {
+          \'a'    : '#S',
+          \'b'    : '',
+          \'c'    : '',
+          \'win'  : ['#I', '#W'],
+          \'cwin' : ['#I', '#W'],
+          \'x'    : '#(whoami)',
+          \'y'    : ['#(date)'],
+          \'z'    : '#(~/.tmux/.getPlayingTrack.sh)'}
+
+    let g:tmuxline_theme = {
+        \   'bg'   : [ 088, 017],
+        \   'a'    : [ 088, 017],
+        \   'b'    : [ 088, 017],
+        \   'c'    : [ 088, 017],
+        \   'win'  : [ 088, 017],
+        \   'cwin' : [ 088, 017],
+        \   'x'    : [ 088, 017],
+        \   'y'    : [ 088, 017],
+        \   'z'    : [ 088, 017]
+        \ }
 
 " bufferline
     " let g:bufferline_echo = 1
