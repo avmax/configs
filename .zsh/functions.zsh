@@ -13,7 +13,7 @@ function f() {
 
 
 # clean screen
-function cls { 
+function cls {
     osascript -e 'tell application "System Events" to keystroke "k" using command down' 
 }
 
@@ -42,15 +42,27 @@ function up {
 
 
 # show spotify current track
-# zsh_show_spotify_track() {
-  # state=`osascript -e 'tell application "Spotify" to player state as string'`;
-  # if [[ $state = "playing" ]]; then
-    # artist=`osascript -e 'tell application "Spotify" to artist of current track as string'`;
-    # track=`osascript -e 'tell application "Spotify" to name of current track as string'`;
-#
-    # echo -n "$artist - $track";
-  # fi
-# }
+zsh_show_spotify_track() {
+  state=`osascript -e 'tell application "Spotify" to player state as string'`;
+  if [[ $state = "playing" ]]; then
+    artist=`osascript -e 'tell application "Spotify" to artist of current track as string'`;
+    track=`osascript -e 'tell application "Spotify" to name of current track as string'`;
+
+    echo -n "$artist - $track";
+  fi
+}
+
+
+
+# get the name of the repo i am on
+zsh_show_git_repo_name() { 
+    gittopdir=$(git rev-parse --git-dir 2> /dev/null)
+    if [[ "foo$gittopdir" == "foo.git" ]]; then
+        echo `basename $(pwd)`
+    elif [[ "foo$gittopdir" != "foo" ]]; then
+        echo `dirname $gittopdir | xargs basename`
+    fi
+}
 
 
 
@@ -150,7 +162,7 @@ function extract {
 
 
 # diff char depenging on if git is dirty or clean
-function _prompt_char() {
+function _prompt_char {
   local STATUS=''
   local FLAGS
   FLAGS=('--porcelain')
@@ -181,3 +193,12 @@ _git_repo_name() {
         echo `dirname $gittopdir | xargs basename`
     fi
 }
+
+
+
+function prompt_char {
+    git branch >/dev/null 2>/dev/null && echo "$GIT_DIRTY" && return
+    hg root >/dev/null 2>/dev/null && echo "$GIT_DIRTY" && return
+    echo "$GIT_CLEAN"
+}
+

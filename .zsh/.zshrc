@@ -12,10 +12,10 @@ export PATH=${PATH}:${ANDROID_HOME}/tools/bin
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/avmax/.oh-my-zsh
 
-source ./.zsh/.zsh_aliases
-source ./.zsh/.zsh_functions
-source ./.zsh/.zsh_variables
-source ./.zsh/.zsh_prompt
+source ${HOME}/.zsh/aliases.zsh
+source ${HOME}/.zsh/functions.zsh
+source ${HOME}/.zsh/variables.zsh
+source ${HOME}/.zsh/prompt.zsh
 
 # tns-completion-start
 if [ -f /Users/avmax/.tnsrc ]; then
@@ -68,7 +68,7 @@ SAVEHIST=5000
 setopt  APPEND_HISTORY
 setopt  HIST_IGNORE_ALL_DUPS
 setopt  HIST_IGNORE_SPACE
-    
+
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git cp ssh-agent osx zsh-completions)
 
