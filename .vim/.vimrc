@@ -192,23 +192,20 @@
 " Syntax and Colors
 " ---------------------------------
 
-    if (has("termguicolors"))
-        set termguicolors
-    endif
-
-    "set 256 colors
-    set t_Co=256
-
     "set syntax highlighting
     syntax on
+    set t_Co=256
 
     "choose colorcseme
-    set background=light
-    let g:solarized_termcolors = 256
-    let g:solarized_termtrans = 1
     colorscheme solarized
+    let g:solarized_termcolors = 256
     let g:enable_bold_font = 1
 
+    if has('gui_running')
+        set background=dark
+    else
+        set background=light
+    endif
 
 
 
