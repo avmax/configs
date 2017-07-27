@@ -9,7 +9,8 @@ alias firefox="open -a /Applications/FirefoxDeveloperEdition.app/Contents/MacOS/
 alias teamviewer="open -a /Applications/TeamViewer.app/Contents/MacOS/TeamViewer"
 alias pokerstars="open -a /Applications/PokerStars.app/Contents/MacOS/PokerStars"
 # alias chrome=="open -a \"Google Chrome\""
-alias ws="webstorm"
+alias ws="open -a /Applications/WebStorm.app/Contents/MacOS/webstorm"
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
 # system
 alias off="sleep 1; xset dpms force off"

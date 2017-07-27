@@ -36,7 +36,6 @@
         Plugin 'gregsexton/MatchTag'
         Plugin 'elzr/vim-json'
         Plugin 'Chiel92/vim-autoformat'
-        Plugin 'gorodinskiy/vim-coloresque'
         Plugin 'JulesWang/css.vim'
         Plugin 'SevInf/vim-bemhtml'
         Plugin 'heavenshell/vim-jsdoc'
@@ -45,7 +44,7 @@
 
 " programming
         Plugin 'scrooloose/syntastic'
-        Plugin 'ternjs/tern_for_vim'
+        " Plugin 'ternjs/tern_for_vim'
         Plugin 'valloric/youcompleteme'
         " [ID] = the extra_menu_info parameter at line 66 in the YouCompleteMe/third_party/ycmd/ycmd/completers/all/identifier_completer.py file.
         Plugin 'mattn/emmet-vim'

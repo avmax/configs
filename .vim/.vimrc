@@ -67,22 +67,13 @@
 " Text identation
 " ---------------------------------
 
-    "a tab is now 4 characters
-    set tabstop=4
-    "dont wrap lines
-    set nowrap
-    "copy tabs after entering a new line
-    set autoindent
-    "same as autoindent but smarter
-    set smartindent
-    "clicking Tab at start of line adds setted shiftwidth
-    set smarttab
-    "replace tab character with spaces
-    set expandtab
-    "indenting is now 4 spaces
+    set noexpandtab
+    set copyindent
+    set preserveindent
+    set softtabstop=0
     set shiftwidth=4
     set tabstop=4
-    set softtabstop=4
+    set expandtab
     "show invisible characters by default
     set list
     "trailing spaces and so on
@@ -212,8 +203,9 @@
     syntax on
 
     "choose colorcseme
-    set background=dark
+    set background=light
     let g:solarized_termcolors = 256
+    let g:solarized_termtrans = 1
     colorscheme solarized
     let g:enable_bold_font = 1
 

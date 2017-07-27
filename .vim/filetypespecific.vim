@@ -11,7 +11,7 @@
         augroup filetype_scss
             autocmd!
             autocmd FileType scss set iskeyword+=-
-            autocmd FileType scss setlocal omnifunc=csscomplete#CompleteCSS noci
+            " autocmd FileType scss setlocal omnifunc=csscomplete#CompleteCSS noci
             autocmd FileType scss set syntax=scss
         augroup END
 
@@ -21,7 +21,7 @@
             autocmd!
             autocmd FileType postcss set iskeyword+=-
             autocmd FileType postcss set syntax=scss
-            autocmd FileType postcss setlocal omnifunc=csscomplete#CompleteCSS noci
+            " autocmd FileType postcss setlocal omnifunc=csscomplete#CompleteCSS noci
         augroup END
 
 " HTML
