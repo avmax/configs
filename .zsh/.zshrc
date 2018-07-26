@@ -2,12 +2,12 @@
 # global
 # --------------------------------------------------------------------
 export TERM="xterm-256color"
-export JAVA_HOME=$(/usr/libexec/java_home)
+# export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
-export ANDROID_HOME=${HOME}/Library/Android/sdk
-export PATH=${PATH}:${ANDROID_HOME}/tools
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools
-export PATH=${PATH}:${ANDROID_HOME}/tools/bin
+# export ANDROID_HOME=${HOME}/Library/Android/sdk
+# export PATH=${PATH}:${ANDROID_HOME}/tools
+# export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+# export PATH=${PATH}:${ANDROID_HOME}/tools/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/avmax/.oh-my-zsh
